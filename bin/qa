@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+echo "[Running] Rubocop..."
+bundle exec rubocop
+
+echo ""
+echo "[Running] RubyCritic..."
+bundle exec rubycritic app lib config -s 91 --no-browser
+
+echo ""
+echo "[Running] Reek..."
+bundle exec reek
+
+echo ""
+echo "[Running] Brakeman..."
+bundle exec brakeman
