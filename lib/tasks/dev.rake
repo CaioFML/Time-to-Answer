@@ -8,7 +8,7 @@ namespace :dev do
       show_spinner('Apagando BD...') { `rails db:drop` }
       show_spinner('Criando BD...') { `rails db:create` }
       show_spinner('Migrando BD...') { `rails db:migrate` }
-      
+
       show_spinner('Registra administrador padrão...') do
         `rails dev:add_default_admin`
       end
