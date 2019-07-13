@@ -1,16 +1,13 @@
 {
   "name": "time_to_answer",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "4.3.1",
-    "font-awesome": "^4.7.0",
-    "jquery": "3.4.1",
-    "jquery.easing": "1.4.1",
-    "metismenu": "^3.0.4"
-  },
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/CaioFML/Time-to-Answer.git",
   "author": "Caio <caio.felipemotta@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "bootstrap": "4.3.1",
+    "jquery": "3.4.1",
+    "jquery.easing": "1.4.1"
+  }
 }
