@@ -3,5 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 //= require jquery/dist/jquery
 //= require bootstrap/dist/js/bootstrap
-//= require jquery-easing/jquery.easing
+//= require jquery.easing/jquery.easing
 //= require sb-admin-2
