@@ -1,0 +1,46 @@
+<% if @admin.errors.any? %>
+  <div class="alert alert-danger alert-dismissable content-fluid">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <% @admin.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="card shadow">
+  <div class="card-header py-3">
+    <h1 class="m-0 font-weight-bold text-primary"><%= action_message %></h1>
+  </div>
+  <div class="card-body">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <%= form_with(model: [ :admins_backoffice, @admin ], local: true) do |form| %>
+
+                        <div class="form-group">
+                            <%= form.label :email %>
+                            <%= form.text_field :email, class:"form-control", placeholder:"Ex: xxxx@xxxx.xxx" %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= form.label :password %>
+                            <%= form.password_field :password, class:"form-control", placeholder:"Ex: xxxxxx" %>
+                        </div>
+
+                        <div class="form-group">
+                            <%= form.label :password_confirmation %>
+                            <%= form.password_field :password_confirmation, class:"form-control", placeholder:"Ex: xxxxxx" %>
+                        </div>
+                      <button type="submit" class="btn btn-primary">Salvar</button>
+
+                    <% end %>
+                </div>
+                <!-- /.col-lg-6 (nested) -->
+            </div>
+            <!-- /.row (nested) -->
+        </div>
+        <!-- /.panel-body -->
+    </div>
+  </div>
+</div>

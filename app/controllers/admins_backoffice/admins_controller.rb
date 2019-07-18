@@ -3,7 +3,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   before_action :set_admin, only: %i[edit update destroy]
 
   def index
-    @admins = Admin.all.order(:id)
+    @admins = Admin.all.order(:id).page(params[:page]).per(5)
   end
 
   def destroy
