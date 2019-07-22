@@ -57,6 +57,7 @@ GEM
     brakeman (4.5.1)
     builder (3.2.3)
     byebug (11.0.1)
+    cocoon (1.2.14)
     codeclimate-engine-rb (0.4.1)
       virtus (~> 1.0)
     coderay (1.1.2)
@@ -312,6 +313,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   brakeman
   byebug
+  cocoon
   coffee-rails (~> 4.2)
   devise
   faker
