@@ -7,6 +7,12 @@
       user:
         one: Usuário
         other: Usuários
+      question:
+        one: Pergunta
+        other: Perguntas
+      subject:
+        one: Assunto
+        other: Assuntos
     attributes:
       admin:
         id: código
@@ -20,3 +26,15 @@
         email: Email
         created_at: Criado em
         updated_at: Atualizado em
+      subject:
+        id: código
+        description: Descrição
+        created_at: Criado em
+        updated_at: atualizado em
+      question:
+        id: Código
+        description: Descrição
+        subject: Assunto
+        subject_id: Assunto
+        created_at: Criado em
+        updated_at: atualizado em

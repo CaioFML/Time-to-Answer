@@ -25,6 +25,10 @@ namespace :dev do
       show_spinner('Cadastrando assuntos padrões..') do
         `rails dev:add_subjects`
       end
+
+      show_spinner('Cadastrando perguntas e respostas..') do
+        `rails dev:add_answers_and_questions`
+      end
     else
       puts 'Você não esta no ambiente de desenvolvimento!!!'
     end
@@ -66,6 +70,18 @@ namespace :dev do
 
     File.open(file_path, 'r').each do |line|
       Subject.create!(description: line.strip)
+    end
+  end
+
+  desc "Adiciona perguntas e respostas"
+  task add_answers_and_questions: :environment do
+    Subject.all.each do |subject|
+      rand(5..10).times do
+        Question.create!(
+          description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+          subject: subject
+        )
+      end
     end
   end
 
