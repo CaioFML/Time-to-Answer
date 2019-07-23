@@ -22,11 +22,11 @@ namespace :dev do
         `rails dev:add_default_user`
       end
 
-      show_spinner('Cadastrando assuntos padrões..') do
+      show_spinner('Cadastrando assuntos padrões...') do
         `rails dev:add_subjects`
       end
 
-      show_spinner('Cadastrando perguntas e respostas..') do
+      show_spinner('Cadastrando perguntas e respostas...') do
         `rails dev:add_answers_and_questions`
       end
     else
