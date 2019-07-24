@@ -39,30 +39,40 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">Time to Answer</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
-            </ul>
+            <ul class="nav navbar-nav"></ul>
+            <%= form_with(url: site_search_path, local: true, method: :get, class:"navbar-form navbar-left") do |form| %>
+              <div class="form-group">
+              <%= form.text_field :term, class:"form-control", placeholder:"Digite" %>
+              </div>
+              <button type="submit" class="btn btn-default">Pesquisar</button>
+            <% end %>
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-              <li><a href="../navbar-static-top/">Static top</a></li>
-              <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+              <% unless user_signed_in? %>
+                <li><%= link_to 'Entrar', new_user_session_path %></li>
+                <li><%= link_to 'Cadastrar-se', new_user_registration_path %></li>
+              <% else %>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= current_user.email %> <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <%= link_to users_backoffice_welcome_index_path, class:"dropdown-item" do %>
+                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Perfil
+                      <% end %>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                      <%= link_to destroy_user_session_path, method: :delete, class:"dropdown-item" do %>
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                        Sair
+                      <% end %>
+                    </li>
+                  </ul>
+                </li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -75,16 +85,41 @@
         <p>
           <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
         </p>
-        <%= yield %>
+        <h1>Site::Welcome#index</h1>
+          <p>Find me in app/views/site/welcome/index.html.erb</p>
+
+          <% if user_signed_in? %>
+            <p>Usuário LOGADO / <%= current_user.email %></p>
+          <% else %>
+            <p>Usuário NÃO esta logado!!</p>
+          <% end %>
+
+          <% if admin_signed_in? %>
+            <p>Administrador LOGADO / <%= current_admin.email %></p>
+          <% else %>
+            <p>Administrador NÃO esta logado!!</p>
+          <% end %>
       </div>
+      <%= yield %>
     </div> <!-- /container -->
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <% if notice %>
+      <%= javascript_tag do %>
+        $.bootstrapGrowl('<%= notice %>', {
+          ele: 'body', // which element to append to
+          type: 'success', // (null, 'info', 'danger', 'success')
+          offset: {from: 'top', amount: 20}, // 'top', or 'bottom'
+          align: 'center', // ('left', 'right', or 'center')
+          width: 250, // (integer, or 'auto')
+          delay: 4000, // Time while the message will be displayed. It's not equivalent to the *demo* timeOut!
+          allow_dismiss: true, // If true then will display a cross to close the popup.
+          stackup_spacing: 10 // spacing between consecutively stacked growls.
+        });
+      <% end %>
+    <% end %>
+
   </body>
 </html>

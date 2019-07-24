@@ -32,7 +32,9 @@ Rails.application.config.assets.precompile += %w[sb-admin-2.js
                                                  img.jpg
                                                  surface-fix.js
                                                  surface-fix.css
-                                                 navbar.css]
+                                                 navbar.css
+                                                 bootstrap-site.js
+                                                 bootstrap-site.css]
 
 # /vendor/assets
 Rails.application.config.assets.precompile += %w[jquery-2.2.4/dist/jquery.js
