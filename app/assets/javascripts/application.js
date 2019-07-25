@@ -10,5 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//rails-ujs é responsavel pelas requisições remotas à *js.erb
 //= require rails-ujs
 //= require activestorage
