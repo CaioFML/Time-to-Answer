@@ -54,9 +54,11 @@ namespace :dev do
     end
   end
 
-  desc "Adiciona o administrador padrão"
+  desc "Adiciona um usuário padrão"
   task add_default_user: :environment do
     User.create!(
+      first_name: 'User',
+      last_name: 'Test',
       email: 'user@user.com',
       password: DEFAULT_PASS,
       password_confirmation: DEFAULT_PASS

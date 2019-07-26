@@ -7,6 +7,9 @@
       user:
         one: Usuário
         other: Usuários
+      user_profile:
+        one: Perfil do Usuário
+        other: Pesfis dos usuários
       question:
         one: Pergunta
         other: Perguntas
@@ -28,6 +31,12 @@
         password_confirmation: Confirmação da senha
         first_name: Nome
         last_name: Sobrenome
+        created_at: Criado em
+        updated_at: Atualizado em
+      user_profile:
+        address: Endereço
+        birthdate: Data de nascimento
+        gender: Gênero
         created_at: Criado em
         updated_at: Atualizado em
       subject:
