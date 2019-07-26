@@ -25,10 +25,10 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'user_devise' %>
 
-    <% if flash %>
-      <% flash.each do |key, value| %>
+    <% unless resource.errors.empty? %>
+      <% resource.errors.full_messages.each do |msg| %>
         <%= javascript_tag do %>
-          $.bootstrapGrowl('<%= value %>', {
+          $.bootstrapGrowl('<%= msg %>', {
             ele: 'body', // which element to append to
             type: 'danger', // (null, 'info', 'danger', 'success')
             offset: {from: 'top', amount: 20}, // 'top', or 'bottom'

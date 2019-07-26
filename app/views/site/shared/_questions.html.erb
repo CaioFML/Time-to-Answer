@@ -1,15 +1,16 @@
 <div class="jumbotron">
-  <% unless params[:term] %>
-    <h2>Ultimas perguntas cadastradas!</h2>
-  <% else %>
-    <h2><%= "Resultados para o termo: \"#{params[:term]}\"" %></h2>
-  <% end %>
+  <h2><%= msg_jumbotron %></h2>
 </div>
 <% @questions.each do |question| %>
   <%= form_with url: site_answer_path  do |form| %>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= question.description %></h3>
+        <h3 class="panel-title">
+        <span class="label label-info" style="margin-right: 10px">
+        <%=  link_to "#{question.subject.description} (#{question.subject.questions_count})", site_search_subject_path(question.subject_id), style:"color: white;"%>
+        </span>
+        <%= question.description %>
+        </h3>
       </div>
       <div class="panel-body">
       <ul>
