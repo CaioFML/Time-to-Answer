@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'inicio', to: 'site/welcome#index'
+  get 'admins', to: 'admins_backoffice/welcome#index'
 
   root 'site/welcome#index'
 end
