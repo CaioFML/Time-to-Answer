@@ -1,4 +1,4 @@
- <div>
+<div>
   <a class="hiddenanchor" id="signin"></a>
 
   <div class="login_wrapper">
@@ -26,6 +26,7 @@
 
           <div class="text-align-center">
             <%= f.submit "Login", class:"btn btn-default submit", style:"float: none; margin-left: 0px; width: 70%" %>
+            <%= link_to 'Esqueceu sua senha?', new_user_password_path, class:"reset_pass" %>
           </div>
 
           <div class="clearfix"></div>

@@ -2,7 +2,12 @@ class Question < ApplicationRecord
   belongs_to :subject, counter_cache: true, inverse_of: :questions
   has_many :answers
   accepts_nested_attributes_for :answers, reject_if: :all_blank, allow_destroy: true
+
+  # Kaminari
   paginates_per 5
+
+  # Callback
+  after_create :event_statistic
 
   scope :search, lambda { |page, term|
     includes(:answers, :subject)
@@ -21,4 +26,10 @@ class Question < ApplicationRecord
       .order('created_at desc')
       .page(page)
   }
+
+  private
+
+  def event_statistic
+    AdminsStatistic.increment_event(AdminsStatistic::EVENTS[:total_questions])
+  end
 end
