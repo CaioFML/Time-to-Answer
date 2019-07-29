@@ -50,6 +50,7 @@
               <button type="submit" class="btn btn-default">Pesquisar</button>
             <% end %>
             <ul class="nav navbar-nav navbar-right">
+              <li><%= link_to 'Área administrativa', admins_backoffice_welcome_index_path %></li>
               <% unless user_signed_in? %>
                 <li><%= link_to 'Entrar', new_user_session_path %></li>
                 <li><%= link_to 'Cadastrar-se', new_user_registration_path %></li>
