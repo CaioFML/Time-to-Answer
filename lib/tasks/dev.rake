@@ -29,6 +29,7 @@ namespace :dev do
 
     show_spinner('Cadastrando perguntas e respostas...') do
       `rails dev:add_answers_and_questions`
+    end
   end
 
   desc "Adiciona o administrador padrão"
