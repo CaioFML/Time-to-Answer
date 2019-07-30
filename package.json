@@ -5,12 +5,10 @@
   "author": "Caio <caio.felipemotta@hotmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.9.0",
     "@rails/webpacker": "^4.0.7",
     "bootstrap": "4.3.1",
     "bootstrap-growl-ifightcrime": "^1.1.0",
     "fastclick": "1.0.6",
-    "font-awesome": "4.6.3",
     "jquery": "3.4.1",
     "jquery-ui": "^1.12.1",
     "jquery.easing": "1.4.1",

@@ -39,4 +39,6 @@ Rails.application.config.assets.precompile += %w[sb-admin-2.js
 # /vendor/assets
 Rails.application.config.assets.precompile += %w[jquery-2.2.4/dist/jquery.js
                                             bootstrap-3.4.1/dist/js/bootstrap.js
-                                            bootstrap-3.4.1/dist/css/bootstrap.css]
+                                            bootstrap-3.4.1/dist/css/bootstrap.css
+                                            @fortawesome/fontawesome-free/css/all.css
+                                            font-awesome/css/font-awesome.css]
