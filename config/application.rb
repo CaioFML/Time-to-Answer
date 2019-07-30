@@ -30,6 +30,6 @@ module TimeToAnswer
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.assets.paths << Rails.root.join('node_modules','bootstrap','fonts')
+    config.assets.paths << Rails.root.join('assets','javascripts','bootstrap-3.4.1','fonts')
   end
 end
