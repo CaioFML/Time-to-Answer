@@ -6,3 +6,51 @@
 *= require @fortawesome/fontawesome-free/css/all
 *= require sb-admin-2
 */
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: normal;
+  font-display: auto;
+  src: url(asset_path('fa-brands-400.eot'));
+  src: url(asset_path('fa-brands-400.eot?#iefix')) format('embedded-opentype'),
+       url(asset_path('fa-brands-400.woff2')) format('woff2'),
+       url(asset_path('fa-brands-400.woff')) format('woff'),
+       url(asset_path('fa-brands-400.ttf')) format('truetype'),
+       url(asset_path('fa-brands-400.svg#fontawesome')) format('svg'); }
+
+.fab {
+  font-family: 'Font Awesome 5 Brands'; }
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: url(asset_path('fa-brands-400.eot'));
+  src: url(asset_path('fa-brands-400.eot?#iefix')) format('embedded-opentype'),
+       url(asset_path('fa-brands-400.woff2')) format('woff2'),
+       url(asset_path('fa-brands-400.woff')) format('woff'),
+       url(asset_path('fa-brands-400.ttf')) format('truetype'),
+       url(asset_path('fa-brands-400.svg#fontawesome')) format('svg'); }
+
+.far {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400; }
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url(asset_path('fa-brands-400.eot'));
+  src: url(asset_path('fa-brands-400.eot?#iefix')) format('embedded-opentype'),
+       url(asset_path('fa-brands-400.woff2')) format('woff2'),
+       url(asset_path('fa-brands-400.woff')) format('woff'),
+       url(asset_path('fa-brands-400.ttf')) format('truetype'),
+       url(asset_path('fa-brands-400.svg#fontawesome')) format('svg'); }
