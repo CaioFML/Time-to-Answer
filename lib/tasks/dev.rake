@@ -9,26 +9,26 @@ namespace :dev do
       show_spinner('Apagando BD...') { `rails db:drop` }
       show_spinner('Criando BD...') { `rails db:create` }
       show_spinner('Migrando BD...') { `rails db:migrate` }
+    end
 
-      show_spinner('Registra administrador padrão...') do
-        `rails dev:add_default_admin`
-      end
+    show_spinner('Registra administrador padrão...') do
+      `rails dev:add_default_admin`
+    end
 
-      show_spinner('Registra administradores extras...') do
-        `rails dev:add_extra_admins`
-      end
+    show_spinner('Registra administradores extras...') do
+      `rails dev:add_extra_admins`
+    end
 
-      show_spinner('Registra usuário padrão...') do
-        `rails dev:add_default_user`
-      end
+    show_spinner('Registra usuário padrão...') do
+      `rails dev:add_default_user`
+    end
 
-      show_spinner('Cadastrando assuntos padrões...') do
-        `rails dev:add_subjects`
-      end
+    show_spinner('Cadastrando assuntos padrões...') do
+      `rails dev:add_subjects`
+    end
 
-      show_spinner('Cadastrando perguntas e respostas...') do
-        `rails dev:add_answers_and_questions`
-      end
+    show_spinner('Cadastrando perguntas e respostas...') do
+      `rails dev:add_answers_and_questions`
     else
       puts 'Você não esta no ambiente de desenvolvimento!!!'
     end
