@@ -46,6 +46,7 @@ gem 'kaminari-i18n'
 gem 'cocoon'
 gem 'webpacker'
 gem "aws-sdk-s3", require: false
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
