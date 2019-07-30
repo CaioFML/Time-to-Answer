@@ -29,6 +29,7 @@ module TimeToAnswer
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-    config.secret_key_base = 'ba37c1dfa5bf926178749aa5d1f5598005e8e2cd86132baa080f94c1f8caccee6d79791c39005abd919cf615d36bbe86ba3433097455578a2c5b5052c58247f1'
+
+    config.assets.paths << Rails.root.join('node_modules','bootstrap','fonts')
   end
 end
